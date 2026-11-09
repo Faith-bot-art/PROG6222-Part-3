@@ -1,0 +1,48 @@
+﻿@model IEnumerable<RaceDay.MVC.Models.EventDto>
+
+@{
+    ViewData["Title"] = "Upcoming Events";
+}
+
+<div class="text-center mb-5">
+    <h1 class="display-4 fw-bold">Upcoming Events</h1>
+    <p class="lead">Find your next race, walk, or cycle in South Africa.</p>
+</div>
+
+<div class="row">
+    @if (!Model.Any())
+    {
+        <div class="col-12 text-center">
+            <h4>No events found. Check back later!</h4>
+        </div>
+    }
+    else
+    {
+        foreach (var ev in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    @if (!string.IsNullOrEmpty(ev.BannerUrl))
+                    {
+                        <img src="@ev.BannerUrl" class="card-img-top" alt="@ev.Name" style="height: 200px; object-fit: cover;">
+                    }
+                    else
+                    {
+                        <div class="bg-secondary text-white d-flex align-items-center justify-content-center" style="height: 200px;">
+                            <h3>@ev.EventType</h3>
+                        </div>
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">@ev.Name</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@ev.StartDate.ToString("dd MMM yyyy")</h6>
+                        <p class="card-text">
+                            📍 @ev.Location <br />
+                            📏 @ev.DistanceKm km (@ev.EventType)
+                        </p>
+                        <a asp-action="Details" asp-route-id="@ev.EventId" class="btn btn-primary w-100">View Details & Enrol</a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

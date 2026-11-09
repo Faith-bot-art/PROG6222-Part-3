@@ -1,0 +1,40 @@
+﻿@model IEnumerable<RaceDay.MVC.Models.EventDto>
+@{
+    ViewData["Title"] = "Organiser Dashboard";
+}
+
+<div class="d-flex justify-content-between align-items-center mt-4 mb-3">
+    <h2>My Events Dashboard</h2>
+    <a asp-action="CreateEvent" class="btn btn-success">+ Create New Event</a>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<table class="table table-striped table-hover shadow-sm">
+    <thead class="table-dark">
+        <tr>
+            <th>Event Name</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Distance</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ev in Model)
+        {
+            <tr>
+                <td class="fw-bold">@ev.Name</td>
+                <td>@ev.StartDate.ToString("dd MMM yyyy")</td>
+                <td>@ev.Location</td>
+                <td>@ev.DistanceKm km</td>
+                <td>
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@ev.EventId" class="btn btn-sm btn-info text-white">View Public Page</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

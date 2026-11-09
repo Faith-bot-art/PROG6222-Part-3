@@ -1,0 +1,83 @@
+﻿@model RaceDay.MVC.Models.RegisterDto
+
+<h2>Create an Account</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Register" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Role">I am a:</label>
+                <select asp-for="Role" class="form-control" id="roleSelect">
+                    <option value="Participant">Participant</option>
+                    <option value="Organiser">Organiser</option>
+                </select>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="FullName"></label>
+                <input asp-for="FullName" class="form-control" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+            </div>
+
+            <!-- Organiser Specific -->
+            <div id="organiserFields" style="display:none;">
+                <div class="form-group mb-3">
+                    <label asp-for="OrganisationName"></label>
+                    <input asp-for="OrganisationName" class="form-control" />
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Website"></label>
+                    <input asp-for="Website" class="form-control" />
+                </div>
+            </div>
+
+            <!-- Participant Specific -->
+            <div id="participantFields">
+                <div class="form-group mb-3">
+                    <label asp-for="EmergencyContactName"></label>
+                    <input asp-for="EmergencyContactName" class="form-control" />
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="EmergencyContactPhone"></label>
+                    <input asp-for="EmergencyContactPhone" class="form-control" />
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="MedicalConditions"></label>
+                    <input asp-for="MedicalConditions" class="form-control" />
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Register</button>
+            <a asp-action="Login" class="btn btn-link">Already have an account? Login</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Toggle fields based on role selection
+        document.getElementById('roleSelect').addEventListener('change', function() {
+            var orgFields = document.getElementById('organiserFields');
+            var partFields = document.getElementById('participantFields');
+
+            if (this.value === 'Organiser') {
+                orgFields.style.display = 'block';
+                partFields.style.display = 'none';
+            } else {
+                orgFields.style.display = 'none';
+                partFields.style.display = 'block';
+            }
+        });
+    </script>
+}
