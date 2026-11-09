@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "uxhQenAV170=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Student\\source\\repos\\RaceDay.API\\RaceDay.MVC\\RaceDay.MVC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Student\\.nuget\\packages\\microsoft.aspnetcore.http\\2.3.13\\microsoft.aspnetcore.http.2.3.13.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.12\\microsoft.aspnetcore.http.abstractions.2.3.12.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.3.11\\microsoft.aspnetcore.http.features.2.3.11.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.3.12\\microsoft.aspnetcore.webutilities.2.3.12.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\microsoft.extensions.objectpool\\8.0.11\\microsoft.extensions.objectpool.8.0.11.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\microsoft.net.http.headers\\2.3.12\\microsoft.net.http.headers.2.3.12.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\system.buffers\\4.6.0\\system.buffers.4.6.0.nupkg.sha512",
+    "C:\\Users\\Student\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
